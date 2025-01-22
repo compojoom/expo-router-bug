@@ -13,6 +13,7 @@ import { Profile } from './screens/Profile';
 import { Settings } from './screens/Settings';
 import { Updates } from './screens/Updates';
 import { NotFound } from './screens/NotFound';
+import {Modal} from "./screens/Modal";
 
 const HomeTabs = createBottomTabNavigator({
   screens: {
@@ -80,6 +81,19 @@ const RootStack = createNativeStackNavigator({
             <Text>Close</Text>
           </HeaderButton>
         ),
+      }),
+    },
+    Modal: {
+      screen: Modal,
+      options: ({ navigation }) => ({
+        presentation: 'transparentModal',
+        animation: 'fade',
+        headerShown: false,
+        // headerRight: () => (
+        //     <HeaderButton onPress={navigation.goBack}>
+        //       <Text>Close</Text>
+        //     </HeaderButton>
+        // ),
       }),
     },
     NotFound: {
